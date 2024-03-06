@@ -75,3 +75,11 @@ variable "multi_az_deployment" {
   description = "create a stanby db instance"
   type        = bool
 }
+
+#application load balancer variables
+#get the ARN value from the certificate manager
+variable "ssl_certificate_arn" {
+  default = ""
+  description = "SSL certificate arn"
+  type = string
+}
