@@ -93,27 +93,41 @@ variable "operator_email" {
 
 #auto scaling group variables
 variable "launch_template_name" {
-  default = "dev-launch-template"
+  default     = "dev-launch-template"
   description = "name of the launch template"
-  type = string
+  type        = string
 }
 
 variable "ec2_image_id" {
   #get ami value from ec2 instance created
-  default = "ami-value"
+  default     = "ami-value"
   description = "AMI id"
-  type = string
+  type        = string
 }
 
 variable "ec2_instance_type" {
-  default = "t2.micro"
+  default     = "t2.micro"
   description = "EC2 instance type"
-  type = string
+  type        = string
 }
 
 variable "ec2_key_pair_name" {
   #get name of your EC2 key pairs from the console
-  default = "key"
+  default     = "key"
   description = "EC2 key pairs name"
-  type = string
+  type        = string
+}
+
+#route 53 variables
+variable "domain_name" {
+  #get domain name from your AWS route 53 service from the console
+  default     = ""
+  description = "domain name"
+  type        = string
+}
+
+variable "record_name" {
+  default     = "www"
+  description = "sub domain name"
+  type        = string
 }
