@@ -79,14 +79,41 @@ variable "multi_az_deployment" {
 #application load balancer variables
 #get the ARN value from the certificate manager
 variable "ssl_certificate_arn" {
-  default = ""
+  default     = ""
   description = "SSL certificate arn"
-  type = string
+  type        = string
 }
 
 #sns topic variable
 variable "operator_email" {
-  default = "youremail@gmail.com"
+  default     = "youremail@address.com"
   description = "email address"
+  type        = string
+}
+
+#auto scaling group variables
+variable "launch_template_name" {
+  default = "dev-launch-template"
+  description = "name of the launch template"
+  type = string
+}
+
+variable "ec2_image_id" {
+  #get ami value from ec2 instance created
+  default = "ami-value"
+  description = "AMI id"
+  type = string
+}
+
+variable "ec2_instance_type" {
+  default = "t2.micro"
+  description = "EC2 instance type"
+  type = string
+}
+
+variable "ec2_key_pair_name" {
+  #get name of your EC2 key pairs from the console
+  default = "key"
+  description = "EC2 key pairs name"
   type = string
 }
